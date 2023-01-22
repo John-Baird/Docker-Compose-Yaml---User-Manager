@@ -1,0 +1,22 @@
+FROM node:18.12.1
+
+#Metadata, note: make sure to convert cohort to int when using it
+LABEL maintainer="John Baird <john.baird6667@stu.mtec.edu>"
+LABEL description="User Manager - Create/Edit/Delete" 
+LABEL cohort="15"
+LABEL animal="snake"
+
+WORKDIR /
+
+RUN pwd
+
+COPY package*.json ./
+
+#The node project is set up to run on port 3000, so I did the same here
+EXPOSE 3000
+
+RUN npm install
+
+COPY . .
+#CMD ["npm", "start"]
+CMD ["node", "node.js"]

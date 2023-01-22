@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  service1:
+    image: user-manager:latest
+    ports: 
+      - 3000:3000
+    deploy: 
+      replicas: 3
+  service2:
+    image: user-manager:latest
+    ports: 
+      - 3001:3001
+    deploy: 
+      replicas: 2
+
